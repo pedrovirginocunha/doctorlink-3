@@ -6,7 +6,7 @@
 <!------- Adicionado link dos icones da tabela planos ---------->
   <script src="https://kit.fontawesome.com/092ff46a3e.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <title>Formulário</title>
+  <title>Cadastro de Usuário</title>
 </head>
 
 <!------- CSS ---------->
@@ -23,6 +23,22 @@ tr td i.fa-check {
   text-align: center;
   vertical-align: middle;
 }
+
+.toptable { /*topo da tabela de planos*/
+  color:rgb(0, 105, 98); 
+  font-size: 30px; 
+  font-weight: 300; 
+  padding: 5px; 
+  margin: 5px;
+}
+
+.segundalinhatable { /*segunda linha da tabela de planos*/
+  font-size: 30px; 
+  font-weight: 300; 
+  padding: 20; 
+  margin: 20;
+}
+
 </style>
 
 <!------- SCRIPT pra escolha unica do checkbox ---------->
@@ -48,23 +64,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<!------- FORMULÁRIOS ---------->
+<!----------------------- FORMULÁRIOS ------------------------->
 
 <body>
 <div class="container">
   <h2 class="align-center" style="color: rgb(3, 141, 125);">CADASTRO DE USUÁRIO</h2>
-  <form>
+    <!------Método POST----->
+  <form method="post" action="userFormulario.php">
     <div class="row">
       <div class="col-lg-6 col-sm-12">
         <div class="form-group">
           <label for="nome">Nome:</label>
-          <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+          <input type="text" class="form-control" id="nome" name="nome" required>
         </div>
       </div>
+
       <div class="col-lg-6 col-sm-12">
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+          <input type="text" class="form-control" id="email" name="email" required>
         </div>
       </div>
     </div>
@@ -73,14 +91,14 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-lg-6 col-sm-12">
         <div class="form-group">
           <label for="dataNascimento">Data de Nascimento:</label>
-          <input type="date" class="form-control" id="dataNascimento">
+          <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" required>
         </div>
       </div>
 
       <div class="col-lg-6 col-sm-12">
         <div class="form-group">
           <label for="sexo">Sexo:</label>
-          <select class="form-control" id="sexo">
+          <select class="form-control" id="sexo" name="sexo" required>
             <option value="masculino">Masculino</option>
             <option value="feminino">Feminino</option>
             <option value="outro">Outro</option>
@@ -93,13 +111,14 @@ document.addEventListener("DOMContentLoaded", function () {
   <div class="col-md-6">
     <div class="form-group">
       <label for="cep">CEP:</label>
-      <input type="text" class="form-control" id="cep" placeholder="Digite seu CEP">
+      <input type="text" class="form-control" id="cep" name="cep">
     </div>
   </div>
+
   <div class="col-md-6">
     <div class="form-group">
       <label for="endereco">Endereço:</label>
-      <input type="text" class="form-control" id="endereco" placeholder="Digite seu endereço">
+      <input type="text" class="form-control" id="endereco" name="endereco" required>
     </div>
   </div>
 </div>
@@ -108,32 +127,33 @@ document.addEventListener("DOMContentLoaded", function () {
   <div class="col-md-6">
     <div class="form-group">
       <label for="medicamento">Faz uso de medicamento contínuo:</label>
-      <select class="form-control" id="medicamento">
+      <select class="form-control" id="medicamento" name="medicamento" required>
         <option value="sim">Sim</option>
         <option value="nao">Não</option>
       </select>
     </div>
   </div>
+
   <div class="col-md-6">
     <div class="form-group">
       <label for="qualMedicamento">Se sim, qual medicamento?</label>
-      <input type="text" class="form-control" id="qualMedicamento" placeholder="Digite o nome do medicamento">
+      <input type="text" class="form-control" id="qualMedicamento" name="qualMedicamento" required>
     </div>
   </div>
 </div>
-
 
 <div class="row">
   <div class="col-lg-6 col-sm-12">
     <div class="mb-3">
       <label for="formFile" class="form-label">Anexar Documento com Foto (RG, CNH ou Passaporte)</label>
-      <input class="form-control" type="file" id="formFile">
+      <input class="form-control" type="file" id="formFile" name="formFile" required>
     </div>
   </div>
+
   <div class="col-lg-6 col-sm-12">
     <div class="form-group">
       <label for="tipoSanguineo">Tipo Sanguíneo:</label>
-      <select class="form-control" id="tipoSanguineo">
+      <select class="form-control" id="tipoSanguineo" name="tipoSanguineo" required>
         <option value="A+">A+</option>
         <option value="A-">A-</option>
         <option value="B+">B+</option>
@@ -152,20 +172,20 @@ document.addEventListener("DOMContentLoaded", function () {
 <div style="display: flex; justify-content: center;">
             <table style="border: 1px solid rgb(0, 157, 152); width: 95%;">
               <tr>
-                <th><h1 class="align-center" style="color:rgb(0, 105, 98); font-size: 30px; font-weight: 300; padding: 5px; margin: 5px;"><strong>Características</strong></h1>
-                  <p class="align-center" style="font-size: 30px; font-weight: 300; padding: 20; margin: 20;"> Mensalidade </p>
+                <th><h1 class="align-center toptable"><strong>Características</strong></h1>
+                  <p class="align-center segundalinhatable"> Mensalidade </p>
                 </th>
     
-                <th><h1 class="align-center" style="color:rgb(0, 105, 98); font-size: 30px; font-weight: 300; padding: 5px; margin: 5px;"><i class="fa fa-plus"></i><strong>Avulso</strong> </h1>
-                  <p class="align-center" style="font-size: 30px; font-weight: 300; padding: 20; margin: 20;"><strong>R$ 99</strong></p>
+                <th><h1 class="align-center toptable"><i class="fa fa-plus"></i><strong>Avulso</strong> </h1>
+                  <p class="align-center segundalinhatable"><strong>R$ 99</strong></p>
                 </th> 
     
-                <th><h1 class="align-center" style="color:rgb(0, 105, 98); font-size: 30px; font-weight: 300; padding: 5px; margin: 5px;"><i class="fa fa-male"></i><strong>Individual</strong></h1>
-                  <p class="align-center" style="font-size: 30px; font-weight: 300; padding: 20; margin: 20;"><strong>R$ 29</strong></p>
+                <th><h1 class="align-center toptable"><i class="fa fa-male"></i><strong>Individual</strong></h1>
+                  <p class="align-center segundalinhatable"><strong>R$ 29</strong></p>
                 </th>
     
-                <th><h1 class="align-center" style="color:rgb(0, 105, 98); font-size: 30px; font-weight: 300; padding: 5px; margin: 5px;"><i class="fa fa-male"></i><i class="fa fa-female"></i><strong>Familiar</strong> </h1>
-                <p class="align-center" style="font-size: 30px; font-weight: 300; padding: 20; margin: 20;"><strong>R$ 79</strong></p>
+                <th><h1 class="align-center toptable"><i class="fa fa-female"></i><strong>Familiar</strong> </h1>
+                <p class="align-center segundalinhatable"><strong>R$ 79</strong></p>
                 </th>
               </tr>
 
@@ -219,9 +239,9 @@ document.addEventListener("DOMContentLoaded", function () {
               </tr>
               <tr>
                 <td class="align-center" style="font-size: 20px;"><strong>Marque a escolha do plano: </strong></td>
-                <td class="align-center"><input type="checkbox" class="checkbox"></td>
-                <td class="align-center"><input type="checkbox" class="checkbox"></td>
-                <td class="align-center"><input type="checkbox" class="checkbox"></td>
+                <td class="align-center"><input type="checkbox" class="checkbox" name="plano" id="plano" value="Avulso"></td>
+                <td class="align-center"><input type="checkbox" class="checkbox" name="plano" id="plano" value="Individual"></td>
+                <td class="align-center"><input type="checkbox" class="checkbox" name="plano" id="plano" value="Familiar"></td>
               </tr>             
             </table>
           </div>
@@ -229,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     </div>
 
-<!------- BOTÃO ENVIAR ---------->
+<!-------------- BOTÃO ENVIAR ---------------->
 
 <br>
 <div style="text-align: center;">
