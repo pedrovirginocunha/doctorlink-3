@@ -29,6 +29,21 @@
   </head>
 
   <body>
+      
+      <script>
+      
+      <!------------ MOSTRAR SENHA ------------------>
+          
+              function mostrarOcultarSenha() {
+        var senhaInput = document.getElementById("senha");
+        if (senhaInput.type === "password") {
+            senhaInput.type = "text";
+        } else {
+            senhaInput.type = "password";
+        }
+    }
+          
+      </script>
 
     <!–---------Logo + Menu de Navegação ------------–>
 
@@ -49,52 +64,57 @@
 
 <br><br><br><br>
     
+    
+    
+    
       <!–-loginnns -–>
       
-      
-
 
             
 
-            <div class="conterizador container">
+    <div class="conterizador container">
+        <form action="processLogin.php" method="post">
+        <div class="caixinha-login">
+            <h2 style="text-align: center; font-size: 16px; font-weight: 300;"> Login/ Registrar</h2>
+        </div>
 
+        <div class="login-usuario imgcontainer">
+            <img src="img/user.png" alt="Avatar" class="login-usuario avatar">
+        </div>
 
-                <form action="/login.html" method="post">
-                        <div class="caixinha-login">
-                          <h2 style="text-align:center ; font-size: 16px; font-weight: 300;"> Login/ Registrar</h2>
-                        </div>
+        <div class="caixinha-login">
+            <label for="nomeUser"><b>Usuário</b></label>
+            <input class="login-usuario" id="nomeUser" name="nomeUser" type="text" placeholder="nome de usuário" required>
 
-                        <div class="login-usuario imgcontainer">
-                          <img src="img/user.png" alt="Avatar" class="login-usuario avatar">
-                        </div>
+            <label for="senha"><b>Senha</b></label>
+            <input class="login-usuario" id="senha" name="senha" type="password" placeholder="senha" required>
 
-                        <div class="caixinha-login">
-                            <label for="uname"><b>Usuário</b></label>
-                            <input class="login-usuario" type="text" placeholder="" value="joao@usuario.com.br" name="uname" required>
+            <!-- Adicione a checkbox para mostrar a senha -->
+            <label for="mostrarSenha">
+                <input type="checkbox" id="mostrarSenha" onclick="mostrarOcultarSenha()"> Mostrar senha
+            </label>
 
-                            <label for="psw"><b>Senha</b></label>
-                            <input class="login-usuario" type="password" placeholder=""  value="sadasdd" name="psw" required>
-                                
-                            <button class="btn" onclick="AbrirUsuario()">Login</button>
-                            <label>
-                              <input class="login-usuario" type="checkbox" checked="checked" name="remember">Lembrar senha
-                            </label>
-                            <button type="button" class="cancelbtn">Cancelar</button><br>
-                            <span class=" login-usuario psw">Esqueceu <a href="#">a senha?</a></span>
+            <button class="btn">Login</button>
+            <label>
+                <input class="login-usuario" type="checkbox" checked="checked" name="remember">Lembrar senha
+            </label>
+            <button type="button" class="cancelbtn">Cancelar</button><br>
+            <span class="login-usuario psw">Esqueceu <a href="#">a senha?</a></span>
 
-                        </div>
-
-                </form>
-
-            
+            <div class="erro-login">
+                <?php
+                if (isset($mensagemErro)) {
+                    echo $mensagemErro;
+                }
+                ?>
             </div>
+        </div>
+    </form>
+</div>
+
             <br><br>
       
        
-  
-  
-
-
 
 
 
