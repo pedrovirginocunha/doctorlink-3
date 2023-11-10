@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Conecte-se ao banco de dados
     $servidor = "localhost";
-    $usuario = "id21419228_doctorlink";
+    $usuarioDB = "id21419228_doctorlink";
     $senhaBD = "Aa123456?";
     $bancoDeDados = "id21419228_doctorlink";
 
