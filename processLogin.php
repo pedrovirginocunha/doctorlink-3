@@ -1,15 +1,15 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nomeUser = $_POST["nomeUser"];
-    $senha = $_POST["senha"]; // A senha inserida pelo usuário
+    $senhaUsuario = $_POST["senha"]; // A senha inserida pelo usuário
 
     // Conecte-se ao banco de dados
     $servidor = "localhost";
-    $usuario = "id21419228_doctorlink";
+    $usuarioDB = "id21419228_doctorlink";
     $senhaBD = "Aa123456?";
     $bancoDeDados = "id21419228_doctorlink";
 
-    $conexao = new mysqli($servidor, $usuario, $senhaBD, $bancoDeDados);
+    $conexao = new mysqli($servidor, $usuarioBD, $senhaBD, $bancoDeDados);
 
     if ($conexao->connect_error) {
         die("Erro na conexão: " . $conexao->connect_error);
@@ -21,10 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($resultado->num_rows == 1) {
         $row = $resultado->fetch_assoc();
-        $senhaSegura = $row["senha"]; // Obtém o hash da senha armazenada no banco de dados
+        $senhaArmazenada = $row["senha"]; // Obtém a senha armazenada no banco de dados
 
-        // Verificar se a senha inserida corresponde ao hash armazenado
-        if (password_verify($senha, $senhaSegura)) {
+        // Verificar se a senha inserida corresponde à senha armazenada (sem hash)
+        if ($senhaUsuario === $senhaArmazenada) {
             // A senha está correta
             // Permita o login e redirecione o usuário para a página apropriada
             session_start(); // Inicie a sessão
