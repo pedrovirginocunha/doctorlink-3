@@ -1,0 +1,72 @@
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      overflow-y: auto; /* Adicionado para permitir rolagem vertical */
+      max-height: 600px; /* Altura máxima para rolagem */
+    }
+
+    h2 {
+      color: #00826e;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 24px;
+    }
+
+    .medico-table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      border: 3px solid #005a4e;
+      margin-bottom: 20px;
+    }
+
+    .medico-table th, .medico-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .medico-table th {
+      background-color: #00826e;
+      color: white;
+    }
+
+    .medico-table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .medico-table tr:nth-child(odd) {
+      background-color: #e0f2f1;
+    }
+
+    .medico-table td {
+      white-space: nowrap;
+    }
+
+    .medico-table .big-font {
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .medico-table .name-row {
+      border-bottom: 3px solid #005a4e;
+    }
