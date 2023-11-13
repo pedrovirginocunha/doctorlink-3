@@ -1401,5 +1401,12 @@ input[type=text], input[type=password] {
   }
 
 }
+/*configuração de tamanho da caixa de busca de Especialidades*/
+
+.caixa{
+  margin: 20px;
+  padding: 10px;
+
+}
 
 /* VIDEO */
