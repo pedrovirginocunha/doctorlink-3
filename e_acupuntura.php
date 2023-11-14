@@ -10,7 +10,7 @@
 
 </head>
 <body>
-  <div class="container">
+  <div>
     <h2>ACUPUNTURISTAS</h2>
 
     <!-- Tabela HTML para exibir os dados -->
@@ -27,7 +27,7 @@
         die("Erro na conexão: " . $conexao->connect_error);
     }
 
-    // Consulta SQL para selecionar todos os registros da tabela "medico" com especialidade "cardiologia"
+    // Consulta SQL para selecionar todos os registros da tabela "medico" com especialidade
     $especialidade = "acupuntura";
     $sql = "SELECT * FROM medico WHERE especialidade = ?";
 
