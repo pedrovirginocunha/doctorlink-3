@@ -10,7 +10,7 @@
 
 </head>
 <body>
-  <div class="container">
+  <div>
     <h2>GINECOLOGISTAS</h2>
 
     <!-- Tabela HTML para exibir os dados -->
@@ -57,5 +57,3 @@
   </div>
 </body>
 </html>
-
-
