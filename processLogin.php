@@ -5,11 +5,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Conecte-se ao banco de dados
     $servidor = "localhost";
-    $usuarioDB = "id21419228_doctorlink";
+    $usuario = "id21419228_doctorlink";
     $senhaBD = "Aa123456?";
     $bancoDeDados = "id21419228_doctorlink";
 
-    $conexao = new mysqli($servidor, $usuarioBD, $senhaBD, $bancoDeDados);
+    $conexao = new mysqli($servidor, $usuario, $senhaBD, $bancoDeDados);
 
     if ($conexao->connect_error) {
         die("Erro na conexão: " . $conexao->connect_error);
@@ -26,11 +26,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verificar se a senha inserida corresponde à senha armazenada (sem hash)
         if ($senhaUsuario === $senhaArmazenada) {
             // A senha está correta
-            // Permita o login e redirecione o usuário para a página apropriada
-            session_start(); // Inicie a sessão
-            $_SESSION['nomeUser'] = $nomeUser; // Armazene o nome do usuário na sessão
-            header('Location: logado.html'); // Redirecionamento
-            exit; // Importante para parar a execução após o redirecionamento
+            // Verificar se é o administrador
+            if ($nomeUser === 'admin' && $senhaUsuario === 'admin') {
+                // Administrador
+                session_start(); // Inicie a sessão
+                $_SESSION['nomeUser'] = $nomeUser; // Armazene o nome do usuário na sessão
+                header('Location: admin.php'); // Redirecionamento para a página do administrador
+                exit; // Importante para parar a execução após o redirecionamento
+            } else {
+                // Usuário normal
+                session_start(); // Inicie a sessão
+                $_SESSION['nomeUser'] = $nomeUser; // Armazene o nome do usuário na sessão
+                header('Location: logado.html'); // Redirecionamento para a página do usuário normal
+                exit; // Importante para parar a execução após o redirecionamento
+            }
         } else {
             $mensagemErro = "Credenciais de login inválidas.";
         }
@@ -46,6 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Redirecionamento com base na mensagem de erro
 if (isset($mensagemErro)) {
     header("Location: login.html?erro=" . urlencode($mensagemErro));
-    exit;
+    exit;
 }
 ?>
