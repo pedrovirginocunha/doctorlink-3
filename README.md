@@ -9,11 +9,11 @@ Demo: [Clique aqui para acessar o site DoctorLink](https://doctorlink.000webhost
 
 Alterações incluidas no 2*Semestre (2SEM) FATEC Franca DSM 2023:
 
-- Página Especialidades:
+-- Página Especialidades:
 - Filtro de busca das Especialidades
-- Exibição dos Médicos Cadastrados no Banco de Ddos por Especialidade
+- Exibição dos Médicos Cadastrados no Banco de Dados por Especialidade
 
-- Página Login:
+-- Página Login:
 - Acesso do Usuário para exibição de seus dados pelo Logado.html
 - Acesso a página Admin
  
@@ -28,7 +28,7 @@ Alterações incluidas no 2*Semestre (2SEM) FATEC Franca DSM 2023:
 - Conferência de igualdade de senhas ao cadastrar
 
 -- Página Admin:
-- CRUD dos Médicos cadastrados no Banco de Dados
+- CRUD completo dos Médicos cadastrados no Banco de Dados
 - Visualização dos Usuários Cadastrados
 
 Características:

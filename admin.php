@@ -57,6 +57,7 @@
         <HR>
     <!-- botão atualizar -->
         <div style="text-align: center; margin-top: 5px;">
+      <button class="btn btn-outline-primary" onclick="cadastrarMedico()">CADASTRAR MÉDICO</button>
       <button class="btn btn-outline-success" onclick="atualizarPagina()">ATUALIZAR PÁGINA</button>
       <button class="btn btn-outline-info" onclick="visualizarUsuarios()">VISUALIZAR USUÁRIOS CADASTRADOS</button>
     </div>
@@ -126,6 +127,11 @@
     function visualizarUsuarios() {
         window.location.href = "consultaUsuariosBD.php";
     }  
+    
+    // BOTÃO CADASTRAR MÉDICO
+    function cadastrarMedico() {
+        window.location.href = "cadastroMedico.html";
+    }
       
     function editarMedico(id) {
         window.location.href = "editarMedico.php?id=" + id;
