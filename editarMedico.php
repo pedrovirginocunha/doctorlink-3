@@ -1,54 +1,3 @@
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-  }
-
-  .container {
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  h2 {
-    color: rgb(3, 141, 125);
-    text-align: center;
-  }
-
-  form {
-    display: grid;
-    gap: 10px;
-  }
-
-  label {
-    font-weight: bold;
-  }
-
-  input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-  }
-
-  button {
-    background-color: #00826e;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-
-  button:hover {
-    background-color: #006d60;
-  }
-</style>
-
 <?php
     $servidor = "localhost";
     $usuario = "id21419228_doctorlink";
@@ -114,7 +63,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Executar a declaração
     if ($query->execute()) {
         // A atualização foi bem-sucedida
-        echo "Atualização bem-sucedida!";
+        // echo "Atualização bem-sucedida!";
+        // Redirecionar para admin.php
+        header("Location: admin.php");
+        exit;  // Certifique-se de sair após o redirecionamento para evitar execução adicional do código
     } else {
         // Houve um erro ao atualizar
         echo "Erro ao atualizar médico. Tente novamente.";
@@ -127,6 +79,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Fechar a conexão com o banco de dados
 $conexao->close();
 ?>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+    color: rgb(3, 141, 125);
+    text-align: center;
+  }
+
+  form {
+    display: grid;
+    gap: 10px;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: #00826e;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    background-color: #006d60;
+  }
+</style>
+
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -165,8 +170,11 @@ $conexao->close();
       <label for="pais">País:</label>
       <input type="text" name="pais" value="<?php echo $medico['pais']; ?>" required>
 
-      <button type="submit">Atualizar</button>
+      <button type="submit">ATUALIZAR</button>
+      
+
     </form>
   </div>
 </body>
 </html>
+
