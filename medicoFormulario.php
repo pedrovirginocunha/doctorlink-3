@@ -32,13 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->query($sql) === TRUE) {
         // Mensagem de alerta em JavaScript
         echo "<script>alert('Médico cadastrado com sucesso!');</script>";
-        // Redireciona para a página de cadastroMedico.html após o alerta
-        echo "<script>window.location = 'cadastroMedico.html';</script>";
+        // Redireciona para a página de admin.php após o alerta
+        echo "<script>window.location = 'admin.php';</script>";
         exit;
     } else {
         // Mensagem de alerta em JavaScript em caso de erro
         echo "<script>alert('Erro ao cadastrar o médico: " . $conn->error . "');</script>";
-        echo "<script>window.location = 'cadastroMedico.html';</script>";
+        echo "<script>window.location = 'admin.php';</script>";
         exit;
     }
 

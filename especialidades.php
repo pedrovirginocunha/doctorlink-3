@@ -43,7 +43,7 @@
       ><span class="navicon"></span></label>
     <ul class="menu">
       <li><a href="index.html"><i class="fa fa-home-alt"></i> Home</a></li>
-      <li><a href="especialidades.html"><i class="fa fa-stethoscope"></i> Especialidades</a></li>
+      <li><a href="especialidades.php"><i class="fa fa-stethoscope"></i> Especialidades</a></li>
       <li><a href="planos.html"><i class="fas fa-laptop-medical"></i> Planos</a></li>
       <li><a href="sobre.html"><i class="fas fa-vector-square"></i> Sobre Nós</a></li>
       <li><a href="login.html" class="alogin"><i class="fa fa-user"></i> Login</a></li>
@@ -525,14 +525,14 @@
         <div class="footer-links">
           <p><strong>Especialidades</strong></p>
           <ul style="margin-left: 40px;">
-            <li><a href="especialidades.html"><i class="fa fa-user-doctor"></i> Angiologia</a></li>
-            <li><a href="especialidades.html"><i class="fa-brands fa-mendeley"></i> Assitência Pré Natal</a></li>
-            <li><a href="especialidades.html"><i class="fa fa-heart"></i> Cardiologia</a></li> 
-            <li><a href="especialidades.html"><i class="fa fa-stethoscope"></i> Dermatologia</a></li> 
-            <li><a href="especialidades.html"><i class="fa fa-apple-whole"></i> Nutrição</a></li> 
-            <li><a href="especialidades.html"><i class="fa fa-brain"></i> Neurologia</a></li> 
-            <li><a href="especialidades.html"><i class="fa fa-spa"></i> Psicologia</a></li>
-            <li><a href="especialidades.html"><i class="fa fa-baby"></i> Pediatria</a></li>
+          <li><a href="especialidades.php"><i class="fa fa-user-doctor"></i> Angiologia</a></li>
+              <li><a href="especialidades.php"><i class="fa-brands fa-mendeley"></i> Assitência Pré Natal</a></li>
+              <li><a href="especialidades.php"><i class="fa fa-heart"></i> Cardiologia</a></li> 
+              <li><a href="especialidades.php"><i class="fa fa-stethoscope"></i> Dermatologia</a></li> 
+              <li><a href="especialidades.php"><i class="fa fa-apple-whole"></i> Nutrição</a></li> 
+              <li><a href="especialidades.php"><i class="fa fa-brain"></i> Neurologia</a></li> 
+              <li><a href="especialidades.php"><i class="fa fa-spa"></i> Psicologia</a></li>
+              <li><a href="especialidades.php"><i class="fa fa-baby"></i> Pediatria</a></li>
 
           </ul>
           

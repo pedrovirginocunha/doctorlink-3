@@ -37,7 +37,7 @@
 </head>
 <body>
   <div class="container">
-    <h2 style="color: rgb(3, 141, 125); text-align: center;">USUÁRIOS CADASTRADOS</h2>
+    <!--<h2 style="color: rgb(3, 141, 125); text-align: center;">USUÁRIOS CADASTRADOS</h2>-->
     <!-- Tabela HTML para exibir os dados -->
     <?php
     $servidor = "localhost";
@@ -58,31 +58,25 @@
     // Executar a consulta
     $resultado = $conexao->query($sql);
 
-    if ($resultado->num_rows > 0) {
+ if ($resultado->num_rows > 0) {
+    while ($linha = $resultado->fetch_assoc()) {
         echo "<table class='user-table'>";
-        echo "<tr><th>ID</th><th>User</th><th>Nome</th><th>Email</th><th>Data de Nascimento</th><th>Sexo</th><th>CEP</th><th>Endereço</th><th>Medicamento?</th><th>Qual Medicamento?</th><th>Tipo Sanguíneo</th><th>Plano</th><th>Foto</th></tr>";
-        while ($linha = $resultado->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $linha["id"] . "</td>";
-            echo "<td>" . $linha["nomeUser"] . "</td>";
-            echo "<td>" . $linha["nome"] . "</td>";
-            echo "<td>" . $linha["email"] . "</td>";
-            echo "<td>" . $linha["dataNascimento"] . "</td>";
-            echo "<td>" . $linha["sexo"] . "</td>";
-            echo "<td>" . $linha["cep"] . "</td>";
-            echo "<td>" . $linha["endereco"] . "</td>";
-            echo "<td>" . $linha["medicamento"] . "</td>";
-            echo "<td>" . $linha["qualMedicamento"] . "</td>";
-            echo "<td>" . $linha["tipoSanguineo"] . "</td>";
-            echo "<td>" . $linha["plano"] . "</td>";
-            echo "<td>" . $linha["fotoUser"] . "</td>";
-            echo "</tr>";
-        }
+        echo "<tr class='name-row'><td class='big-font'><B>{$linha["nome"]}</B></td></tr>";
+        echo "<tr><td><b>Email:</b> {$linha["email"]}</td></tr>";
+        echo "<tr><td><b>Data de Nascimento:</b> {$linha["dataNascimento"]}</td></tr>";
+        echo "<tr><td><b>Sexo:</b> {$linha["sexo"]}</td></tr>";
+        echo "<tr><td><b>CEP:</b> {$linha["cep"]}</td></tr>";
+        echo "<tr><td><b>Endereço:</b> {$linha["endereco"]}</td></tr>";
+        echo "<tr><td><b>Medicamento:</b> {$linha["medicamento"]}</td></tr>";
+        echo "<tr><td><b>Qual Medicamento:</b> {$linha["qualMedicamento"]}</td></tr>";
+        echo "<tr><td><b>Tipo Sanguíneo:</b> {$linha["tipoSanguineo"]}</td></tr>";
+        echo "<tr><td><b>Plano:</b> {$linha["plano"]}</td></tr>";
+        echo "<tr><td><b>Foto:</b> {$linha["fotoUser"]}</td></tr>";
         echo "</table>";
-    } else {
-        echo "Nenhum registro encontrado.";
     }
-
+} else {
+    echo "Nenhum usuário cadastrado.";
+}
     // Fechar a conexão com o banco de dados
     $conexao->close();
     ?>
